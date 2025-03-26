@@ -21,7 +21,7 @@ const WorkoutDetails2 = ({ workout }) => {
 
       const token = user.accessToken;
       const response = await fetch(
-        `https://fittrackbackend-sgj9.onrender.com/api/workouts/${workout._id}`,
+        `http://localhost:4000/api/workouts/${workout._id}`,
         {
           method: 'DELETE',
           headers: {

@@ -16,7 +16,7 @@ export const useDashboard = (timeRange = 'week') => {
         const token = user.accessToken;
 
         const response = await fetch(
-          `https://fittrackbackend-sgj9.onrender.com/api/dashboard?range=${timeRange}`,
+          `http://localhost:4000/api/dashboard?range=${timeRange}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

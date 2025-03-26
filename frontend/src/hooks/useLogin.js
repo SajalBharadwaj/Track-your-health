@@ -12,7 +12,7 @@ export const useLogin = () => {
 
     try {
       const response = await fetch(
-        'https://fittrackbackend-sgj9.onrender.com/api/user/login',
+        'http://localhost:4000/api/user/login',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

@@ -39,7 +39,7 @@ export default function HomePage() {
         const token = user.accessToken; // Extract the JWT token
 
         const response = await fetch(
-          'https://fittrackbackend-sgj9.onrender.com/api/workouts',
+          'http://localhost:4000/api/workouts',
           {
             headers: {
               Authorization: `Bearer ${token}`, // Add token to Authorization header

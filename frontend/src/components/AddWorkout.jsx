@@ -33,7 +33,7 @@ export default function AddWorkout() {
 
     try {
       const response = await fetch(
-        'https://fittrackbackend-sgj9.onrender.com/api/workouts',
+        'http://localhost:4000/api/workouts',
         {
           method: 'POST',
           body: JSON.stringify(workout),

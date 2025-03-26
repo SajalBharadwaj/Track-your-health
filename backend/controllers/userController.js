@@ -4,7 +4,7 @@ const User = require('../models/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const validator = require('validator');
-
+require('dotenv').config();
 //@desc login a user
 //@access public
 //@route POST api/user/logn
