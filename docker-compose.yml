@@ -1,0 +1,16 @@
+services:
+  frontend:
+    build: ./frontend
+    container_name: fittrack-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    container_name: fittrack-backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
