@@ -1,143 +1,224 @@
-FitTrack MERN Stack Application
+# FitTrack - MERN Stack Fitness Tracker with Docker
 
-FitTrack is a full-stack fitness tracker application built using the MERN stack (MongoDB, Express, React, and Node.js). It provides users with workout tracking, blog articles, and a dashboard for monitoring fitness activities.
-Table of Contents
+FitTrack is a full-stack fitness tracking application built using the MERN stack (MongoDB, Express.js, React.js, and Node.js). The application allows users to track workouts, monitor calories burned, visualize fitness statistics, and manage their health data through an interactive dashboard.
 
-    Features
-    Tech Stack
-    Prerequisites
-    Project Structure
-    Installation
-    Environment Variables
-    Running the App
-    Contributing
-    License
+---
 
-Features
+## Features
 
-    User authentication (sign up, login)
-    Track workouts, calories burned, active minutes
-    Interactive dashboard with charts for data visualization
-    Fetch and display blog articles
-    Responsive and intuitive UI using React and Tailwind CSS
-    Backend API built with Express and MongoDB for data management
+* User Authentication (Signup/Login)
+* JWT-based Secure Authentication
+* Workout Tracking
+* Calories Burned Monitoring
+* Active Minutes Tracking
+* Interactive Dashboard with Charts
+* Blog Articles Section
+* Responsive UI with Tailwind CSS
+* RESTful API Architecture
+* Dockerized Frontend and Backend Services
 
-Tech Stack
+---
 
-    Frontend: React.js, Tailwind CSS, Shadcn UI, Framer Motion
-    Backend: Node.js, Express.js, MongoDB, Mongoose
-    Authentication: JWT-based authentication
-    Routing: React Router for frontend routing, Express for backend routing
-    Tools & Libraries: Axios, Moment.js, bcrypt, Helmet, Validator
+## Tech Stack
 
-Prerequisites
+### Frontend
 
-Before you begin, ensure you have met the following requirements:
+* React.js
+* Tailwind CSS
+* Shadcn UI
+* Framer Motion
+* Axios
+* React Router DOM
 
-    Node.js (v16.x or later)
-    npm or yarn
-    MongoDB (installed and running locally or hosted on MongoDB Atlas)
+### Backend
 
-Project Structure
+* Node.js
+* Express.js
+* MongoDB Atlas
+* Mongoose
 
-bash
+### Authentication
 
-.
-├── backend
-│   ├── controllers
-│   ├── models
-│   ├── routes
+* JWT (JSON Web Token)
+* bcrypt
+
+### Security
+
+* Helmet
+* Validator
+
+### DevOps
+
+* Docker
+* Docker Compose
+
+---
+
+## Project Structure
+
+```bash
+Track-your-health/
+├── backend/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── constants/
 │   ├── server.js
-│   ├── .env
-│   └── ...
-├── frontend
-│   ├── src
-│   ├── public
-│   ├── .env
-│   └── ...
+│   ├── Dockerfile
+│   └── package.json
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── Dockerfile
+│   └── package.json
+│
+├── docker-compose.yml
 ├── .gitignore
-├── package.json
 └── README.md
+```
 
-Installation
-Clone the repository
+---
 
-bash
+## Prerequisites
 
-git clone https://github.com/your-username/fittrack-mern.git
-cd fittrack-mern
+Before running this project, ensure you have installed:
 
-Install dependencies
-Frontend:
+* Node.js (v16 or later)
+* npm
+* Docker
+* Docker Compose
+* MongoDB Atlas Account
 
-bash
+---
 
+## Environment Variables
+
+Create a `.env` file inside the backend folder.
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+```
+
+---
+
+## Installation (Without Docker)
+
+### Clone Repository
+
+```bash
+git clone https://github.com/SajalBharadwaj/Track-your-health.git
+
+cd Track-your-health
+```
+
+### Backend Setup
+
+```bash
+cd backend
+npm install
+npm start
+```
+
+### Frontend Setup
+
+```bash
 cd frontend
 npm install
+npm run dev
+```
+
+---
+
+## Run Using Docker
+
+### Build and Start Containers
+
+```bash
+docker compose up --build
+```
+
+### Run in Detached Mode
+
+```bash
+docker compose up -d --build
+```
+
+### Stop Containers
+
+```bash
+docker compose down
+```
+
+---
+
+## Application URLs
+
+Frontend:
+
+```text
+http://localhost:5173
+```
 
 Backend:
 
-bash
+```text
+http://localhost:5000
+```
 
-cd backend
-npm install
+---
 
-Environment Variables
+## Future Enhancements
 
-You need to configure environment variables for both the frontend and backend.
-Frontend .env file
+* Email Verification
+* Forgot Password
+* Profile Image Upload
+* AI-Based Fitness Recommendations
+* Notifications System
+* CI/CD Pipeline Integration
+* Kubernetes Deployment
 
-In the frontend folder, create a .env file:
+---
 
-bash
+## Contributing
 
-REACT_APP_API_URL=http://localhost:5000
+Contributions are welcome.
 
-Backend .env file
+1. Fork the repository
+2. Create a feature branch
 
-In the backend folder, create a .env file with the following variables:
+```bash
+git checkout -b feature-name
+```
 
-bash
+3. Commit changes
 
-PORT=5000
-MONGO_URI=your_mongodb_uri
-JWT_SECRET=your_jwt_secret
+```bash
+git commit -m "Added new feature"
+```
 
-Ensure that these .env files are excluded from version control by including them in the .gitignore.
-Running the App
-Backend
+4. Push changes
 
-Navigate to the backend folder and run the server:
+```bash
+git push origin feature-name
+```
 
-bash
+5. Create a Pull Request
 
-cd backend
-npm start
+---
 
-This will start the backend server at http://localhost:5000.
-Frontend
+## License
 
-In another terminal window, navigate to the frontend folder and run the React app:
+This project is licensed under the MIT License.
 
-bash
+---
 
-cd frontend
-npm start
+## Author
 
-This will start the frontend on http://localhost:3000.
-Connecting Frontend and Backend
+**Sajal Sharma**
 
-The React app will communicate with the backend using the REACT_APP_API_URL defined in the .env file.
-Contributing
+GitHub: https://github.com/SajalBharadwaj
 
-Contributions are welcome! Please follow these steps:
-
-    Fork the project
-    Create a new branch (git checkout -b feature-branch)
-    Commit your changes (git commit -m "Add some feature")
-    Push to the branch (git push origin feature-branch)
-    Open a pull request
-
-License
-
-This project is open-source and available under the MIT License.
