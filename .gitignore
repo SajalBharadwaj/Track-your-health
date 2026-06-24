@@ -16,7 +16,16 @@ backend/build/
 frontend/dist/
 backend/dist/
 
-# .env files (containing secrets)
+# Environment files
+.env
 *.env
 frontend/.env
 backend/.env
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
